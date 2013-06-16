@@ -4,8 +4,8 @@
 // ArchC includes
 #include "ac_tlm_protocol.H"
 #include "ac_tlm_port.H"
-//#include "../../ip/ac_tlm_lock/ac_tlm_lock.h"
-//#include "ac_tlm_lock.h"
+
+#include "ac_tlm_lock.h"
 //////////////////////////////////////////////////////////////////////////////
 
 // using statements
@@ -17,7 +17,7 @@ using tlm::tlm_transport_if;
 namespace user
 {
 
-// A router!
+// A TLM router
   class ac_tlm_router :
   public sc_module,
   public ac_tlm_transport_if
@@ -38,11 +38,11 @@ public:
   
   ac_tlm_rsp transport( const ac_tlm_req &request ) {
     // To memory
-    if(request.addr < 5242884)
+    if(request.addr < (5*1024*1024+4)) //5242884
       return mem_port->transport(request);
 
     // To lock
-    if (request.addr == 5242884)
+    if (request.addr == (6*1024*1024))
       return lock_port->transport(request);
 
     // To function unit
