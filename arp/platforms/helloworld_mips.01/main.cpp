@@ -23,7 +23,7 @@ const char *archc_options="-abi -dy ";
 #include  "mips1.H"
 #include  "ac_tlm_mem.h"
 #include  "ac_tlm_router.h"
-#include  "ac_tlm_lock.h"
+//#include  "ac_tlm_lock.h"
 
 using user::ac_tlm_mem;
 using user::ac_tlm_router;

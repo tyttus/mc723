@@ -4,8 +4,8 @@
 // ArchC includes
 #include "ac_tlm_protocol.H"
 #include "ac_tlm_port.H"
-
-#include "ac_tlm_lock.h"
+#include "../../ip/ac_tlm_lock/ac_tlm_lock.h"
+//#include "ac_tlm_lock.h"
 //////////////////////////////////////////////////////////////////////////////
 
 // using statements
